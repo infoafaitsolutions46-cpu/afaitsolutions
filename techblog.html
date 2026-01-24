@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tech Blog – Afa Solutions</title>
+
+  <!-- Your global styles and scripts -->
+  <link rel="stylesheet" href="Afa.css" />
+
+  <!-- Distinct blog theme -->
+  <link rel="stylesheet" href="techblog.css" />
+
+  <script defer src="Afa.js"></script>
+  <script defer src="techblog.js"></script>
+</head>
+<body class="tech-blog">
+
+<!-- Navbar -->
+  <header>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">Afa Solutions</div>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+
+      <!-- Services Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Development</h4>
+            <a href="erp.html">ERP Development</a>
+            <a href="webdev.html">Web Development</a>
+            <a href="software.html">Custom Software</a>
+          </div>
+          <div class="mega-column">
+            <h4>Marketing</h4>
+            <a href="seo.html">SEO & Marketing</a>
+            <a href="social.html">Social Media</a>
+            <a href="content.html">Content Strategy</a>
+          </div>
+          <div class="mega-column">
+            <h4>Technology</h4>
+            <a href="mobile.html">Mobile App Development</a>
+            <a href="crm.html">CRM Solutions</a>
+            <a href="qa.html">QA & Testing</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Projects Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Projects</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Project Types</h4>
+            <a href="landing.html">Landing Pages</a>
+            <a href="erp-projects.html">ERP Software</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="tech-sites.html">Tech Websites</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Technologies Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Technologies</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Languages</h4>
+            <a href="#">Java</a>
+            <a href="#">PHP</a>
+            <a href="#">C++</a>
+            <a href="#">Python</a>
+            <a href="#">JavaScript</a>
+          </div>
+          <div class="mega-column">
+            <h4>Frameworks</h4>
+            <a href="#">Angular JS</a>
+            <a href="#">React JS</a>
+            <a href="#">Node JS</a>
+            <a href="#">.NET</a>
+            <a href="#">Ruby on Rails</a>
+          </div>
+          <div class="mega-column">
+            <h4>Tools & Platforms</h4>
+            <a href="#">SaaS</a>
+            <a href="#">CRM</a>
+            <a href="#">ERP</a>
+            <a href="#">QA Automation</a>
+            <a href="#">Mobile App Dev</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+  <!-- Hero -->
+  <header class="tech-hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Afa Tech Journal</div>
+      <h1>Simple, clear tech updates</h1>
+      <p>Quick reads on AI breakthroughs, Microsoft news, and big moves in space tech.</p>
+      <div class="hero-actions">
+        <a href="#latest" class="btn btn-primary">Read latest</a>
+        <a href="#did-you-know" class="btn btn-ghost">Do you know?</a>
+      </div>
+    </div>
+    <div class="hero-bg"></div>
+  </header>
+
+  <!-- ✅ Tech Advice of the Day -->
+<section class="tech-tip">
+  <div class="tip-inner">
+    <span class="tip-label">💡 Tech Advice of the Day</span>
+    <p><strong>Prompt engineering</strong> isn’t just about clever wording—it’s about clarity. The more specific your question, the smarter your AI answer. Try: <em>“Summarize this article in 3 bullet points for a beginner.”</em></p>
+  </div>
+</section>
+
+
+  <!-- Controls (optional) -->
+  <section id="categories" class="controls">
+    <div class="controls-inner">
+      <div class="filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="ai">AI</button>
+        <button class="chip" data-filter="microsoft">Microsoft</button>
+        <button class="chip" data-filter="spacex">SpaceX</button>
+        <button class="chip" data-filter="security">Security</button>
+        <button class="chip" data-filter="infra">Cloud & Infra</button>
+      </div>
+      <div class="search">
+        <input id="search" type="search" placeholder="Search stories…" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest stories -->
+  <main id="latest" class="feed grid">
+
+    <!-- AI story -->
+    <article class="card" data-tags="ai" data-words="520">
+      <a class="cover" href="#">
+        <img src="assets/icons/ai-editor-abstract.jpg" alt="Abstract AI interface" loading="lazy" />
+        <span class="badge">AI</span>
+      </a>
+      <div class="content">
+        <h2 class="title"><a href="#">AI hits another milestone</a></h2>
+        <p class="excerpt">
+          Researchers report faster, cheaper training methods and smarter small models.
+          In plain terms: better AI on regular devices, not just supercomputers.
+        </p>
+        <ul class="meta">
+          <li><span class="pill">AI</span></li>
+          <li><span class="reading-time">—</span></li>
+          <li><button class="share" aria-label="Share article">Share</button></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Microsoft story -->
+    <article class="card" data-tags="microsoft infra" data-words="480">
+      <a class="cover" href="#">
+        <img src="assets/icons/microsoft-mosaic.jpg" alt="Cloud and microchip abstract" loading="lazy" />
+        <span class="badge">Microsoft</span>
+      </a>
+      <div class="content">
+        <h2 class="title"><a href="#">Microsoft doubles down on AI tools</a></h2>
+        <p class="excerpt">
+          New updates bring smarter assistance into everyday apps and developer tools,
+          aiming to save time on writing, coding, and meetings.
+        </p>
+        <ul class="meta">
+          <li><span class="pill">Cloud & Apps</span></li>
+          <li><span class="reading-time">—</span></li>
+          <li><button class="share" aria-label="Share article">Share</button></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- SpaceX story -->
+    <article class="card" data-tags="spacex infra" data-words="460">
+      <a class="cover" href="#">
+        <img src="assets/icons/spacex-echostar.jpg" alt="Satellite network abstract" loading="lazy" />
+        <span class="badge">SpaceX</span>
+      </a>
+      <div class="content">
+        <h2 class="title"><a href="#">SpaceX expands satellite capacity</a></h2>
+        <p class="excerpt">
+          More coverage and faster links for internet from space. What it means:
+          better connectivity in hard‑to‑reach places around the world.
+        </p>
+        <ul class="meta">
+          <li><span class="pill">Space & Connectivity</span></li>
+          <li><span class="reading-time">—</span></li>
+          <li><button class="share" aria-label="Share article">Share</button></li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Security story -->
+    <article class="card" data-tags="security" data-words="430">
+      <a class="cover" href="#">
+        <img src="assets/icons/sbom-supplychain.jpg" alt="Cybersecurity lock abstract" loading="lazy" />
+        <span class="badge">Security</span>
+      </a>
+      <div class="content">
+        <h2 class="title"><a href="#">Software “ingredient lists” go mainstream</a></h2>
+        <p class="excerpt">
+          More companies adopt SBOMs—simple lists that show what’s inside software.
+          It helps teams fix risks faster and build trust with customers.
+        </p>
+        <ul class="meta">
+          <li><span class="pill">Security</span></li>
+          <li><span class="reading-time">—</span></li>
+          <li><button class="share" aria-label="Share article">Share</button></li>
+        </ul>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Do you know? -->
+  <section id="did-you-know" class="feed grid" aria-label="Do you know facts">
+    <article class="card" data-tags="ai" data-words="200">
+      <a class="cover" href="#">
+        <img src="assets/icons/vector-search.jpg" alt="Data points abstract" loading="lazy" />
+        <span class="badge">Do you know?</span>
+      </a>
+      <div class="content">
+        <h2 class="title"><a href="#">Your photos already use AI</a></h2>
+        <p class="excerpt">
+          Most phone cameras use AI to adjust lighting and color automatically—
+          that’s why night shots look clear without extra settings.
+        </p>
+        <ul class="meta">
+          <li><span class="pill">Everyday AI</span></li>
+          <li><span class="reading-time">—</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="card" data-tags="infra" data-words="210">
+      <a class="cover" href="#">
+        <img src="assets/icons/finops-ai.jpg" alt="Abstract finance charts" loading="lazy" />
+        <span class="badge">Do you know?</span>
+      </a>
+      <div class="content">
+        <h2 class="title"><a href="#">AI costs are mostly compute</a></h2>
+        <p class="excerpt">
+          Running AI can be expensive because it needs powerful chips.
+          Smart caching and smaller models can cut the bill noticeably.
+        </p>
+        <ul class="meta">
+          <li><span class="pill">Cloud & Cost</span></li>
+          <li><span class="reading-time">—</span></li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- Footer -->
+  <footer class="tech-footer">
+    <p>© 2025 Afa Solutions. Curated by Farhan.</p>
+  </footer>
+
+</body>
+</html>

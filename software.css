@@ -1,0 +1,106 @@
+/* ✅ Hero Section */
+.clean-hero {
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #00796b;
+}
+
+.clean-hero .hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.clean-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.clean-hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* ✅ Prose Blocks */
+.prose {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.prose-block {
+  position: relative;
+  padding: 2rem 1.75rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #ffffff;
+  border-left: 6px solid #00796b;
+}
+
+.prose-block:nth-child(even) {
+  background: linear-gradient(135deg, #004d40 0%, #00796b 100%);
+  border-left-color: #009688;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 121, 107, 0.25);
+}
+
+.prose-block:nth-child(even) h2,
+.prose-block:nth-child(even) p {
+  color: #ffffff;
+}
+
+.prose-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 121, 107, 0.15);
+}
+
+.prose-block h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.prose-block p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* ✅ Contact Form */
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: #00796b;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-form button:hover {
+  background: #004d40;
+}
+
+/* ✅ Footer */
+footer {
+  background: #0a3d62;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}

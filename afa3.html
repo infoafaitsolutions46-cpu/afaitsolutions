@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Afa Solutions</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fc;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+
+/* Navbar Container */
+.navbar {
+     position: fixed;
+    top: 0;
+    left: 0;
+     width: 100%;    /* Ensures full horizontal coverage */ 
+    z-index: 1000;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+     padding: 1rem 2rem;
+     display: flex;
+    align-items: center;
+     justify-content: center; /* Center the container inside */
+     box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand img {
+  height: 80px;           /* adjust if needed */
+  width: auto;
+  max-height: 80px;    /* safety limit */
+  transition: transform 0.3s ease;
+}
+
+.nav-brand:hover img {
+  transform: scale(1.05);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation List */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation Links */
+.nav-list a {
+  text-decoration: none;
+  color: #00796b;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-list a:hover {
+  background-color: #b2dfdb;
+  color: #004d40;
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+}
+
+/* Mega Menu Styling */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  display: none;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  min-width: 600px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown:hover .mega-menu {
+  display: flex;
+}
+
+/* Mega Columns */
+.mega-column {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.mega-column h4 {
+  font-size: 1rem;
+  color: #009688;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.3rem;
+}
+
+.mega-column a {
+  color: #555;
+  text-decoration: none;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.mega-column a:hover {
+  color: #00796b;
+}
+
+    /* Hero */
+    .clean-hero {
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      padding: 7rem 2rem 2rem;
+      text-align: center;
+      color: #00796b;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    #typed {
+      color: #038c7f;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #038c7f;
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 1.5rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: #00695c;
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #8ee9e0;
+      margin-bottom: 3rem;
+    }
+
+    /* Services - 2×2 grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 992px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+      transition: all 0.35s ease;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 22px 45px rgba(0,121,107,0.18);
+    }
+
+    .service-card h3 {
+      font-size: 1.45rem;
+      color: #00796b;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .service-card .description {
+      color: #555;
+      margin-bottom: 1.5rem;
+      font-size: 0.98rem;
+    }
+
+    .service-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .service-card li {
+      position: relative;
+      padding-left: 1.9rem;
+      margin-bottom: 0.75rem;
+      color: #444;
+      font-size: 0.97rem;
+    }
+
+    .service-card li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #038c7f;
+      font-weight: bold;
+    }
+
+    /* Projects Grid (kept original style) */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card img.icon {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    /* Contact */
+    .contact form {
+      max-width: 580px;
+      margin: 2rem auto;
+    }
+
+    .contact label {
+      display: block;
+      margin: 0.8rem 0 0.4rem;
+      font-weight: 500;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 0.9rem;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+
+    .contact button {
+      margin-top: 1.5rem;
+      background: #00796b;
+      color: white;
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.05rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #00796b;
+      color: white;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body class="main-page">
+
+   <!-- Navbar -->
+  <header>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand"> <img src="assets/icons/logafa.png" alt="Web Dev Icon" /> </div>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+
+      <!-- Services Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Services</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Development</h4>
+            <a href="erp.html">ERP Development</a>
+            <a href="webdev.html">Web Development</a>
+            <a href="software.html">Custom Software</a>
+          </div>
+          <div class="mega-column">
+            <h4>Marketing</h4>
+            <a href="seo.html">Search Engine Optimization</a>
+            <a href="social.html">Marketing</a>
+            <a href="content.html">Content Strategy</a>
+          </div>
+          <div class="mega-column">
+            <h4>Technology</h4>
+            <a href="crm.html">CRM Solutions</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Projects Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Projects</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Project Types</h4>
+            <a href="landing.html">Landing Pages</a>
+            <a href="erp-projects.html">ERP Software</a>
+            <a href="blogs.html">Blogs</a>
+            <a href="tech-sites.html">Tech Websites</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Technologies Mega Menu -->
+      <li class="dropdown">
+        <a href="#">Technologies</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Languages</h4>
+            <a href="#">Java</a>
+            <a href="#">PHP</a>
+            <a href="#">C++</a>
+            <a href="#">Python</a>
+            <a href="#">JavaScript</a>
+          </div>
+          <div class="mega-column">
+            <h4>Frameworks</h4>
+            <a href="#">Angular JS</a>
+            <a href="#">React JS</a>
+            <a href="#">Node JS</a>
+            <a href="#">.NET</a>
+            <a href="#">Ruby on Rails</a>
+          </div>
+          <div class="mega-column">
+            <h4>Tools & Platforms</h4>
+            <a href="#">SaaS</a>
+            <a href="#">CRM</a>
+            <a href="#">ERP</a>
+            <a href="#">QA Automation</a>
+            <a href="#">Mobile App Dev</a>
+          </div>
+        </div>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+</header> 
+
+<!-- Hero Section -->
+<section class="clean-hero">
+  <div class="hero-content">
+    <h1>Empowering Businesses with <span id="typed"></span></h1>
+    <p>We build solutions that streamline, innovate, and grow your business.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </div>
+</section>
+
+<!-- Services Section - Updated cards only -->
+<section id="services" class="section">
+  <h2 class="section-heading">Our Core Services</h2>
+
+  <div class="services-grid">
+
+    <div class="service-card" onclick="location.href='erp.html'">
+        <img src="assets/icons/erp.jpg" alt="ERP Icon" />
+      <h3>ERP Development</h3>
+      <p class="description">We build custom cloud-based ERP systems that streamline business operations across inventory, sales, and finance.</p>
+      <ul>
+        <li>End-to-end business process integration</li>
+        <li>Real-time inventory & stock tracking</li>
+        <li>Finance, accounting & reporting modules</li>
+        <li>Scalable cloud architecture</li>
+        <li>Mobile access & role-based permissions</li>
+      </ul>
+    </div>
+
+    <div class="service-card" onclick="location.href='webdev.html'">
+              <img src="assets/icons/webdev.jpg" alt="Web Dev Icon" />
+      <h3>Web Development</h3>
+      <p class="description">We create responsive, user-friendly websites tailored to your business needs—whether it's a corporate site or an e-commerce platform.</p>
+      <ul>
+        <li>Fully responsive & mobile-first design</li>
+        <li>Custom UI/UX tailored to brand</li>
+        <li>E-commerce & payment integration</li>
+        <li>SEO-friendly structure</li>
+        <li>Fast loading speed optimization</li>
+      </ul>
+    </div>
+
+    <div class="service-card" onclick="location.href='seo.html'">
+        <img src="assets/icons/seo.jpg" alt="SEO Icon" />
+      <h3>SEO & Marketing</h3>
+      <p class="description">We help businesses grow online through strategic SEO and targeted digital marketing. Our approach is data-driven and results-oriented.</p>
+      <ul>
+        <li>Complete keyword research & strategy</li>
+        <li>On-page & technical SEO optimization</li>
+        <li>Content marketing & link building</li>
+        <li>Google & social media advertising</li>
+        <li>Monthly performance tracking & reports</li>
+      </ul>
+    </div>
+
+    <div class="service-card" onclick="location.href='mobile.html'">
+        <img src="assets/icons/mob.png" alt="ERP Icon" />
+      <h3>Mobile App Development</h3>
+      <p class="description">We develop high-performance native and cross-platform mobile applications for iOS and Android platforms.</p>
+      <ul>
+        <li>Native iOS & Android development</li>
+        <li>Cross-platform using Flutter/React Native</li>
+        <li>Push notifications & offline support</li>
+        <li>App store submission & optimization</li>
+        <li>Regular updates & maintenance</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+  <h2 class="section-heading">Our Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card" onclick="location.href='dashboard.php'">
+      <img src="assets/icons/hosp.png" alt="Hospital Icon" class="icon" />
+      <h3>Hospital Website</h3>
+      <p>Responsive hospital management and appointment booking system now you dont need to wait in long lines.You can view all of our team and their respective specifications here.</p>
+    </div>
+
+    <div class="project-card" onclick="location.href='inventory.html'">
+      <img src="assets/icons/inv.png" alt="Inventory Icon" class="icon" />
+      <h3>Inventory Management App</h3>
+      <p>Real-time stock, orders, and supply chain management platform.</p>
+    </div>
+
+    <div class="project-card" onclick="location.href='blog.html'">
+      <img src="assets/icons/Clg.PNG" alt="Blog Icon" class="icon" />
+      <h3>College managment app</h3>
+      <p>From keeping students records and attendance to assessment schedules and grading ypou name it we have it.ALong with live charts to provide you the exact data of your top students . role based access for every memeber of faculty and staff</p>
+    </div>
+
+        <div class="project-card" onclick="location.href='crm.html'">
+      <img src="assets/icons/blog.png" alt="Blog Icon" class="icon" />
+      <h3>Customer Relationship Management (CRM)</h3>
+      <p>Our CRM enables seamless management of clients, projects, and teams across web development, mobile app development, ERP solutions, and custom CRM services. From lead generation and follow-ups to project tracking, task assignment, and delivery milestones, everything is organized in one secure, intelligent platform.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+  <h2 class="section-heading">Contact Us</h2>
+  <form action="https://formspree.io/f/mpwyjjwn" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Email:</label>
+    <input type="email" name="email" required>
+
+    <label>Message:</label>
+    <textarea name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Afa Solutions. All Rights Reserved.</p>
+</footer>
+
+<script>
+  AOS.init({ duration: 800, once: true });
+
+  // Typing Effect
+  const typedText = ["ERP Development", "Web Development", "SEO & Marketing", "Mobile Apps"];
+  let textIndex = 0;
+  let charIndex = 0;
+  let currentText = "";
+  let isDeleting = false;
+  const typingSpeed = 120;
+  const deletingSpeed = 60;
+  const delayBetweenWords = 1500;
+
+  function typeEffect() {
+    const element = document.getElementById("typed");
+    currentText = typedText[textIndex];
+
+    if (isDeleting) {
+      element.textContent = currentText.substring(0, charIndex--);
+      if (charIndex < 0) {
+        isDeleting = false;
+        textIndex = (textIndex + 1) % typedText.length;
+      }
+    } else {
+      element.textContent = currentText.substring(0, charIndex++);
+      if (charIndex > currentText.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, delayBetweenWords);
+        return;
+      }
+    }
+    setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    typeEffect();
+  });
+</script>
+</body>
+</html>

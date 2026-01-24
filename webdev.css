@@ -1,0 +1,207 @@
+.webdev-page .hero {
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  padding: 3rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.webdev-page .hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.webdev-page .hero h1 {
+  font-size: 2.5rem;
+  color: #00796b;
+  margin-bottom: 1rem;
+}
+
+.webdev-page .subtitle {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.webdev-page .hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.webdev-page .btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.webdev-page .btn-primary {
+  background-color: #00796b;
+  color: #fff;
+}
+.webdev-page .btn-primary:hover {
+  background-color: #004d40;
+}
+
+.webdev-page .btn-ghost {
+  background-color: transparent;
+  color: #00796b;
+  border: 1px solid #00796b;
+}
+.webdev-page .btn-ghost:hover {
+  background-color: #e0f2f1;
+}
+
+.webdev-page .hero-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 2rem;
+  text-align: center;
+}
+
+.webdev-page .hero-visual {
+  font-size: 1.1rem;
+  color: #009688;
+  font-weight: 600;
+}
+
+.webdev-page main.container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.webdev-page .section {
+  margin-bottom: 3rem;
+}
+
+.webdev-page .prose {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.webdev-page .prose h2 {
+  font-size: 1.8rem;
+  color: #00796b;
+  margin-bottom: 1rem;
+}
+
+.webdev-page .prose p,
+.webdev-page .prose ul,
+.webdev-page .prose li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.webdev-page .cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.webdev-page .fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.webdev-page .fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Base prose block styling */
+.prose-block {
+  position: relative;
+  padding: 2rem 1.75rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Odd blocks: plain white card */
+.prose-block:nth-child(odd) {
+  background-color: #ffffff;
+  border-left: 6px solid #00796b;
+}
+
+/* Even blocks: dark gradient card */
+.prose-block:nth-child(even) {
+  background: linear-gradient(135deg, #004d40 0%, #00796b 100%);
+  border-left: 6px solid #009688;
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 121, 107, 0.25);
+}
+
+/* Text inside dark blocks */
+.prose-block:nth-child(even) h2,
+.prose-block:nth-child(even) p,
+.prose-block:nth-child(even) li {
+  color: #ffffff;
+}
+
+/* Hover effect for both */
+.prose-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 121, 107, 0.15);
+}
+
+/* Headings */
+.prose-block h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Paragraphs and lists */
+.prose-block p,
+.prose-block ul,
+.prose-block li {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+}
+
+.prose-block ul {
+  padding-left: 1.2rem;
+}
+
+.prose-block li::marker {
+  color: #009688;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prose-block {
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+  }
+
+  .prose-block h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .webdev-page .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .webdev-page .hero h1 {
+    font-size: 2rem;
+  }
+}
+
