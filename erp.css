@@ -1,4 +1,5 @@
 .erp-page .hero {
+  position: relative; /* ✅ ensures hero-bg stays aligned */
   background: linear-gradient(to right, #e0f7fa, #ffffff);
   padding: 3rem 1.5rem;
   border-bottom: 1px solid #e0e0e0;
@@ -23,6 +24,8 @@
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2; /* ✅ keeps text above blurred bg */
 }
 
 .erp-page .hero h1 {
@@ -161,6 +164,7 @@
   opacity: 1;
   transform: none;
 }
+
 /* Base prose block styling */
 .prose-block {
   background: #ffffff;
@@ -225,29 +229,23 @@
   border-radius: 8px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .prose-block {
-    padding: 1.5rem 1.25rem;
-    border-radius: 12px;
-  }
-
-  .prose-block h2 {
-    font-size: 1.5rem;
-  }
-}
-
+/* ✅ Unified Mobile Adjustments */
 @media (max-width: 768px) {
   .erp-page .hero-inner {
     grid-template-columns: 1fr;
     text-align: center;
   }
-
   .erp-page .hero-card {
     margin-top: 2rem;
   }
-
   .erp-page .hero h1 {
     font-size: 2rem;
+  }
+  .prose-block {
+    padding: 1.5rem 1.25rem;
+    border-radius: 12px;
+  }
+  .prose-block h2 {
+    font-size: 1.5rem;
   }
 }
